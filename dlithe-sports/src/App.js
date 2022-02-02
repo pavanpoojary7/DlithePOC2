@@ -1,4 +1,5 @@
 import React from 'react'
+import { NewTournament } from './NewTournament'
 
 
 const App=()=>{
@@ -7,7 +8,7 @@ const App=()=>{
 
     <>
     
-    
+    <NewTournament/>
     
     
     
