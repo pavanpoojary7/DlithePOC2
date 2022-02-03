@@ -15,21 +15,20 @@ import javax.persistence.ManyToOne;
   many to 1
  */
 @Entity
-public class Athlete {
- 
+public class Athlete 
+{
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private int enrolId;
+	private int enrollId;
 	private String name;
 	private long contactNo;
 	private double weight;
 	@ManyToOne
 	private Tournament tournament;
-	
-	public int getEnrolId() {
-		return enrolId;
+	public int getEnrollId() {
+		return enrollId;
 	}
-	public void setEnrolId(int enrolId) {
-		this.enrolId = enrolId;
+	public void setEnrollId(int enrollId) {
+		this.enrollId = enrollId;
 	}
 	public String getName() {
 		return name;
@@ -55,7 +54,4 @@ public class Athlete {
 	public void setTournament(Tournament tournament) {
 		this.tournament = tournament;
 	}
-
-	
-	
 }

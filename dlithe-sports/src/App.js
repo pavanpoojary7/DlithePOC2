@@ -1,18 +1,21 @@
-import React from 'react'
-import { NewTournament } from './NewTournament'
+import React from 'react';
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+import { NewTournament } from './NewTournament';
 
 
 const App=()=>{
 
  return(
-
-    <>
-    
-    <NewTournament/>
-    
-    
-    
-    </>
+     
+   <BrowserRouter>
+   <Routes>
+   <Route path="/" exact element={<h1>HOME Page</h1>}/>
+          <Route path="/new" exact element={<NewTournament/>}/>
+          <Route path="/old" exact element={<h1>OLD Page</h1>}/>
+   </Routes>
+   
+   </BrowserRouter>
+   
  )
  }
  export default App
