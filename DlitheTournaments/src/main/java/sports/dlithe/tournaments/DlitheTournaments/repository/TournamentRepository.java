@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import sports.dlithe.tournaments.DlitheTournaments.entity.Tournament;
 
 @Repository
-public interface TournamentRepository extends JpaRepository<Tournament,Integer>{
-
+public interface TournamentRepository extends JpaRepository<Tournament,Integer>
+{
+  
 }

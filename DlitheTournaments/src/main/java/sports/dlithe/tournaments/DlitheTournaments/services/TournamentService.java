@@ -1,5 +1,7 @@
 package sports.dlithe.tournaments.DlitheTournaments.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +18,14 @@ public class TournamentService {
 		
 	return	trepo.save(tournament).getName()+" has added as upcoming event";
 		
+	}
+	
+	public List<Tournament> fetchingAll()
+	{
+		return trepo.findAll();
+	}
+	public Tournament fetchingOnlyOne(Integer id)
+	{
+		return trepo.findById(id).orElse(new Tournament());
 	}
 }
