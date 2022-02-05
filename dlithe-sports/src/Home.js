@@ -5,16 +5,7 @@ import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 
 export const Home=()=>{
     const[every,setEvery]=useState([])
-    const[tour,setTour]=useState({
-        "tournamentId":0,
-        "name":"",
-        "startDate":"",
-        "venue":"",
-        "winner":"",
-        "participant":[],
-        "price":0
 
-    })
 
     useEffect(()=>{
         gather()
@@ -33,7 +24,8 @@ export const Home=()=>{
                         <table className="table table-bordered table-hover shadow">
                             <thead className="bg-warning text-danger">
                                 <tr>
-                                    <th>Tournament Id</th><th>Tournament Name</th>
+                                    <th>Tournament Id</th>
+                                    <th>Tournament Name</th>
                                     <th>Tournament Start Date</th>
                                     <th>Tournament Venue</th>
                                     <th>Tournament Participants</th>
@@ -53,11 +45,10 @@ export const Home=()=>{
                                         <td>{obj.winner}</td>
                                         <td>{obj.price}</td>
                                         <td>
-                                            <Button color="warning" onClick={()=>{
-                                                setTour(obj)
-                                            }}>
+                                        <a className="btn btn-outline-warning"
+                                                href={`/ath/${index}`}>
                                                 <AccountBoxOutlinedIcon/>
-                                            </Button>
+                                                </a>
                                         </td>
                                     </tr>
                                 ))}

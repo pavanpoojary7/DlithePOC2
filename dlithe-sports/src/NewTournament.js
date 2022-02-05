@@ -1,4 +1,4 @@
-import {React,useState} from 'react'
+import React,{useState} from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
@@ -33,21 +33,21 @@ export const NewTournament=()=>{
   }
 
   const schedule=async()=>{
-      const t = await inserting(tournament)
-      alert(t.data)
-      clean()
-  }
+    const t = await inserting(tournament)
+    alert(t.data)
+    clean()
+}
 
-  const clean=()=>{
-      setTournament(()=>{
-          return{
-              "name":"",
-              "price":0,
-              "venue":"",
-              "startDate":""
-          }
-      })
-  }
+const clean=()=>{
+    setTournament(()=>{
+        return{
+            "name":"",
+            "price":0,
+            "venue":"",
+            "startDate":""
+        }
+    })
+}
 
   return(
       <>

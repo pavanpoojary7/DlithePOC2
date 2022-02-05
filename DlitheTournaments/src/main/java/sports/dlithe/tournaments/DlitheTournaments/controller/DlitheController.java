@@ -38,6 +38,13 @@ public class DlitheController
 	@PostMapping("/part")
 	public String addingAth(@RequestBody Athlete athlete)
 	{
-		return aservice.enroll(athlete);
+		// adding athlete to the table of tournament in participants list
+//		athlete.getTournament().getParticipants().add(athlete);
+//		tservice.newOne(athlete.getTournament());
+		String t = aservice.enroll(athlete);
+		Tournament tour = tservice.fetchingOnlyOne(athlete.getTournament().getTournamentId());
+		tour.getParticipants().add(athlete);
+		tservice.newOne(tour);
+		return t;
 	}
 }
