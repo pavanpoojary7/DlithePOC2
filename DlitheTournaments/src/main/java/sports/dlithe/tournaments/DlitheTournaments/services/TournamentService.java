@@ -28,4 +28,10 @@ public class TournamentService {
 	{
 		return trepo.findById(id).orElse(new Tournament());
 	}
+	
+	public String announce(Tournament tournament)
+	{
+		return trepo.save(tournament).getName()+" has updated";
+	}
+	
 }

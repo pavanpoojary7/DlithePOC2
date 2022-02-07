@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,5 +48,12 @@ public class DlitheController
 		tour.getParticipants().add(athlete);
 		tservice.newOne(tour);
 		return t;
+	}
+	@PutMapping("/up/{winner}")
+	public String yetToDecide(@PathVariable("winner") String winner, @RequestBody Tournament tournament)
+	{
+		tournament.setWinner(winner);
+		String t = tservice.announce(tournament);
+		return t+" winner is "+winner;
 	}
 }

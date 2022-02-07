@@ -41,7 +41,11 @@ export const Home=()=>{
                                         <td>{obj.name}</td>
                                         <td>{new Date(obj.startDate).toISOString()}</td>
                                         <td>{obj.venue}</td>
-                                        <td>{obj.participants.length}</td>
+                                        <td>
+                                            <a href={`/show/${index}`} className="link-dark">
+                                            {obj.participants.length}
+                                            </a>
+                                            </td>
                                         <td>{obj.winner}</td>
                                         <td>{obj.price}</td>
                                         <td>
