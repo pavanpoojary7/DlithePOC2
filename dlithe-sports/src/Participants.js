@@ -1,13 +1,13 @@
 import React, { useState ,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { collecting, updating } from "./Bridge";
+import { collecting, updating,onlyOne } from "./Bridge";
 import Button from '@mui/material/Button';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 
 
 
 export const Participants=()=>{
-    const{position}=useParams()
+    const{id}=useParams()
 
     const[tour,setTour]=useState(
         {
@@ -25,14 +25,14 @@ export const Participants=()=>{
     },[])
 
     const gather=async()=>{
-        const t=await collecting()
-        setTour(t.data[position])
+        const t=await onlyOne(id)
+        setTour(t.data)
     }
 
     const declare=async(person)=>{
         const t = await updating(person,tour)
         alert(t.data)
-        window.location.assign("/")
+        window.location.assign("/home")
     }
 
     return(

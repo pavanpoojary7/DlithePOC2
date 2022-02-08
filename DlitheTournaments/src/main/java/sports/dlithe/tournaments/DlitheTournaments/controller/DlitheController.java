@@ -56,4 +56,9 @@ public class DlitheController
 		String t = tservice.announce(tournament);
 		return t+" winner is "+winner;
 	}
+	@GetMapping("/one/{id}")
+	public Tournament gettingOne(@PathVariable("id")Integer id)
+	{
+		return tservice.fetchingOnlyOne(id);
+	}
 }
