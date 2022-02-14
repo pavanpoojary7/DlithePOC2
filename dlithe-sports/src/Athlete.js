@@ -1,3 +1,4 @@
+//importing identifiers from nodemodules
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collecting, enrolling,onlyOne } from "./Bridge";
@@ -68,7 +69,7 @@ export const Athlete=()=>{
     }
 
     return(
-        <>
+        <> {/*Athlete List*/}
             {athlete.tournament.name}
             <div className="row justify-content-center mt-lg-5">
                 <div className="col-lg-8 col-md-10 col-sm-12 shadow p-5">
