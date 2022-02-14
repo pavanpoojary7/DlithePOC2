@@ -1,3 +1,4 @@
+//importing identifiers from node modules
 import React, { useState } from "react";
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
@@ -25,6 +26,7 @@ export const Login=()=>{
             }
         })
     }
+    {/* checking username and password*/}
 
     const log=()=>{
         if(auth.user==="arunsridhar"&&auth.pass==="reactspring")
@@ -47,6 +49,7 @@ export const Login=()=>{
     }
 
     return(<>
+           {/* Image slides using carousel*/}
         <div className="container mt-lg-5">
             <div className="row justify-content-center">
                 <div className="col-lg-8 col-md-6 col-sm-12">
@@ -78,6 +81,7 @@ export const Login=()=>{
                         </Carousel.Item>
                     </Carousel>
                 </div>
+                       {/* Login page*/} 
                 <div className="col-lg-4 col-md-6 col-sm-12 align-self-center shadow p-4">
                     <h2 className="text-center text-danger">Login to DLithe Sports Buddy</h2>
                     <TextField
