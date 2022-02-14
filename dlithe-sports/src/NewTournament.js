@@ -1,3 +1,4 @@
+//importing identifiers from nodemodules
 import React,{useState} from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import InputAdornment from '@mui/material/InputAdornment';
@@ -50,7 +51,8 @@ const clean=()=>{
 }
 
   return(
-      <>
+      <> 
+           {/*tournament list*/}
           <div className="row justify-content-center mt-lg-5">
               <div className="col-lg-8 col-md-10 col-sm-12 shadow p-5">
                   <h1 className="display-3 text-info text-center">New Tournament Schedule</h1>
